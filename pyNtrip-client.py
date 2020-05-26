@@ -4,6 +4,10 @@ import socket
 import base64
 import sys
 
+ser = serial.Serial(tty, 19200, timeout=2, xonxoff=False, rtscts=False, dsrdtr=False)
+ser.flushInput()
+ser.flushOutput()
+
 bs = "bs1"
 
 # Definition of one or multiple NTRIP base stations
@@ -58,7 +62,8 @@ try:
         if not data:
             exit()
         
-        print(data)
+        ret = ser.write(data)
+        #print(ret)
         #print >>sys.stderr, [ord(d) for d in data]
         sys.stdout.flush()
 
