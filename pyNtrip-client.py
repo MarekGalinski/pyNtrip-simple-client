@@ -10,6 +10,8 @@ ser.flushOutput()
 
 bs = "bs1"
 
+#pridal som sem comment
+
 # Definition of one or multiple NTRIP base stations
 if bs=="bs1":
     server = "ip"
